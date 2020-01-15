@@ -37,6 +37,7 @@
   </ng-template>
 
   <ng-template pTemplate="header" let-columns>
+
     <tr>
       <th style="width: 75px;">{{'serial' | translate}}</th>
 
@@ -53,6 +54,7 @@
     </tr>
 
     <tr class="search-controls">
+
       <th></th>
 
       <th *ngFor="let col of columns">
@@ -65,8 +67,9 @@
 
         <div *ngIf="col.filterMode && col.filterMode === 'dropdown'">
 
-          <p-multiSelect [options]="col.filterDropdown"
-            (onChange)="columnSearchHandle(sel.value, col.dropdownFilterName)" optionLabel="nameFl"></p-multiSelect>
+          <p-multiSelect appendTo="body" #sel [options]="col.filterDropdown"
+            (onChange)="columnSearchHandle(sel.value, col.dropdownFilterName)" optionLabel="nameFl">
+          </p-multiSelect>
 
           <!-- <mat-select #sel multiple (valueChange)="columnSearchHandle(sel.value, col.dropdownFilterName)">
             <mat-option *ngFor="let item of col.filterDropdown" [value]="item.id">
@@ -75,7 +78,9 @@
         </div>
 
         <div *ngIf="col.filterMode && col.filterMode === 'check'">
-          <p-dropdown [options]="dropDownOptions" [(ngModel)]="id" optionLabel="name"></p-dropdown>
+          <p-dropdown appendTo="body" [options]="dropDownOptions" #checkSel
+            (valueChange)="columnSearchHandle(checkSel.value, col.field)" optionLabel="name">
+          </p-dropdown>
 
           <!-- <mat-select #checkSel (valueChange)="columnSearchHandle(checkSel.value, col.field)">
             <mat-option [value]="">
@@ -91,7 +96,8 @@
         </div>
 
         <div *ngIf="col.filterMode && col.filterMode === 'date'">
-          <p-calendar (onSelect)="columnSearchHandle($event.value, col.field)"></p-calendar>
+          <p-calendar appendTo="body" (onSelect)="columnSearchHandle($event.value, col.field)">
+          </p-calendar>
 
           <!-- <mat-form-field style="width: 100%;">
             <input matInput [matDatepicker]="dp3" data-placeholder="{{ 'Date'  | translate}}"
@@ -123,7 +129,6 @@
           </div>
           <div *ngIf="col.filterMode === 'check';" style="text-align: center;">
             <p-checkbox [(ngModel)]="rowData[col.field]" [disabled]="true"></p-checkbox>
-            <!-- <mat-checkbox [(ngModel)]="rowData[col.field]" [disabled]="true"></mat-checkbox> -->
           </div>
           <div *ngIf="col.filterMode !== 'date' && col.filterMode !== 'check'">
             {{ rowData[col.field] }}
@@ -133,26 +138,21 @@
       </td>
 
       <td *ngIf="actions">
+
         <span *ngFor="let action of actions">
           <span *ngIf="action.isEdit" class="iconPadding">
             <i style="cursor: pointer;" class="pi pi-user-edit" style="font-size: 3em" (click)="addRow(rowData)"></i>
-            <!-- <mat-icon style="cursor: pointer;" color="accent" (click)="addRow(rowData)"
-              [matTooltip]="'edit' | translate">
-              edit</mat-icon> -->
           </span>
+
           <span *ngIf="action.isView" class="iconPadding">
             <i style="cursor: pointer;" class="pi pi-info-circle" style="font-size: 3em"
               (click)="openViewDetail(rowData)"></i>
-            <!-- <mat-icon style="cursor: pointer;" color="accent" (click)="openViewDetail(rowData)"
-              [matTooltip]="'details' | translate">visibility</mat-icon> -->
           </span>
+
           <span *ngIf="action.isDelete" class="iconPadding">
 
             <i style="cursor: pointer;" class="pi pi-trash" style="font-size: 3em"
-            (click)="openDeleteDialog(rowData.id)"></i>
-
-            <!-- <mat-icon style="cursor: pointer;" color="warn" [matTooltip]="'deletetrans' | translate"
-              (click)="openDeleteDialog(rowData.id)">delete</mat-icon> -->
+              (click)="openDeleteDialog(rowData.id)"></i>
           </span>
           <!-- <span *ngIf="!action.isEdit && !action.isDelete" class="iconPadding">
             <mat-icon style="cursor: pointer;" color="action.color" (click)="action.call(rowData)">
@@ -176,6 +176,6 @@
 
 <div class="custom-paginator">
   <p-paginator [rows]="tableCore.pageOptions.limit" (onPageChange)="setPage($event)"
-    [rowsPerPageOptions]="[3, 5, 10, 20, 50, 100]" [totalRecords]="tableCore.pageOptions.count"></p-paginator>
-
+    [rowsPerPageOptions]="[3, 5, 10, 20, 50, 100]" [totalRecords]="tableCore.pageOptions.count">
+  </p-paginator>
 </div>

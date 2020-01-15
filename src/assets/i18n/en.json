@@ -1,0 +1,267 @@
+{
+    "HOME": {
+        "TITLE": "Hello Angular {{value}}",
+        "SELECT": "Change language",
+        "columnName": {
+            "fixedColumnName": {
+                "indexColumn": "No.",
+                "editCoLumn": "edit"
+            },
+            "countries": [
+                "code",
+                "NameFl",
+                "NameSl"
+            ],
+            "religion": [
+                "code",
+                "descriptionFl",
+                "descriptionSl"
+            ],
+            "contractTypes": [
+                "contractTypeFL",
+                "contractTypeSL"
+            ],
+            "PartialPermissionTypes": [
+                "code",
+                "partialPermissionFL",
+                "partialPermissionSL",
+                "countryName",
+                "balance",
+                "numberPerMonth",
+                "period",
+                "calculatePermissionDutyAllowance",
+                "calculatePermissionDutyAllowanceCancelInRamadan",
+                "calculatePermissionEmployeeAllowances",
+                "calculatePermissionEmployeeAllowancesCancelInRamadan"
+            ],
+            "overtimeDates": [
+                "startDate",
+                "endDate",
+                "notes"
+            ],
+            "locations": [
+                "code",
+                "locationFL",
+                "locationSL",
+                "description",
+                "countryName"
+            ],
+            "leaveRegulations": [
+                "leaveNameFl",
+                "leaveNameSl",
+                "countryName",
+                "balancePerYear",
+                "leaveTypeName"
+            ],
+            "dutysettings": [
+                "startDate",
+                "endDate",
+                "dutyStatusName",
+                "startTime",
+                "endTime",
+                "weekEndName",
+                "restDayName",
+                "allowanceIn",
+                "allowanceOut",
+                "allowLaunch",
+                "allowHalfDay"
+            ],
+            "employees": [
+                "Employee Number",
+                "Employee Name",
+                "civil Id",
+                "Nationality",
+                "Gender Name",
+                "Start Date",
+                "Service Name"
+            ],
+            "fixedDuties": [
+                "Duty Type Name",
+                "Duty DescriptionFl",
+                "Duty Description Sl",
+                "Has Holiday",
+                "Include OverTime"
+            ],
+            "emergencyAllowances": [
+                "Teype Location or Department",
+                "Description",
+                "Exemption",
+                "Start Date",
+                "End Date "
+            ],
+            "FreeDutySettings": [
+                "Start date",
+                "End date",
+                "Status",
+                "Weekend",
+                "Rest day",
+                "Working hours",
+                "Notes"
+            ],
+            "employeePermissions": [
+                "Employee Number",
+                "Employee Name",
+                "civil Id",
+                "permission type",
+                "Permission Date",
+                "start Time",
+                "end Time"
+            ],
+            "employeeLeaves": [
+                "Employee Number",
+                "Employee Name",
+                "civil Id",
+                "Leave type",
+                "start Date",
+                "end Date",
+                "Period",
+                "Balance"
+            ],
+            "employeeAlowances": [
+                "employeeNumber",
+                "employeeNameFl",
+                "civilId",
+                "allowance Name Sl",
+                "startDate",
+                "endDate",
+                "allowanceIn",
+                "allowanceOut",
+                "daysFl"
+            ],
+            "fullDayPermissions": [
+                "code",
+                "full Day Permission FL",
+                "full Day Permission SL"
+            ],
+            "holidayDates": [
+                "holiday Name",
+                "start Date",
+                "end Date",
+                "country Name",
+                "notes"
+            ],
+            "holidays": [
+                "code",
+                "public Holiday Name FL",
+                "public Holiday Name SL"
+            ],
+            "jobDegrees": [
+                "code",
+                "job Degree FL",
+                "job Degree SL"
+            ],
+            "jobs": [
+                "code",
+                "job FL",
+                "job SL",
+                "exemption From Fingerprint"
+            ],
+            "lateRegulations": [
+                "start Date",
+                "end Date",
+                "late Regulation FL",
+                "late Regulation SL",
+                "deduction Group Type Name",
+                "notes"
+            ],
+            "rotatedduties": [
+                "Code",
+                "Rotated Description Fl",
+                "Rotated Description Sl",
+                "Include Over Time",
+                "start Time",
+                "end Time",
+                "allowance In",
+                "allowance Out",
+                "Allow Break"
+            ],
+            "nationalities": [
+                "code",
+                "nationality FL",
+                "nationality SL"
+            ],
+            "qualifications": [
+                "qualification Type Fl",
+                "qualification Type Sl"
+            ],
+            "groups": [
+                "code",
+                "group Fl",
+                "group Sl",
+                "active"
+            ],
+            "allowances": [
+                "allowance TypeName Sl",
+                
+                "allowance Name Fl",
+                "allowance Name Sl"
+            ],
+            "teams": [
+                "code",
+                "team Name Fl",
+                "team Name Sl"
+            ],
+            "leavetypes": [
+                "code",
+                "leave Type Fl",
+                "leave Type SL"
+            ],
+            "usermangments": [
+                "employee NO",
+                "employee Name Sl",
+                "group Name SL",
+                "Active",
+                "expire Date"
+            ],
+            "adminmanger": [
+                "employee NO",
+                "admin Level FL",
+                "civil Id",
+                "employee Name Fl",
+                "start Date",
+                "end Date"
+            ],
+            "previousLeavesBalances": [
+                "employee Number",
+                "employee Name Fl",
+                "leave Name Fl",
+                "previous Balance",
+                "year"
+            ],
+            "allowanceSettings": [
+                "start Date",
+                "end Date",
+                "replace Duty Allowance In",
+                "replace Duty Allowance Out",
+                "merging Allowances",
+                "cancel In Ramadan",
+                "notes"
+            ],
+            "EmployeeLogSheet": [
+                "Employee number",
+                "Log datetime",
+                "Event",
+                "Terminal name",
+                "Serial number",
+                "Notes"
+            ],
+            "employeeProfiles": [
+                "name",
+                "start date",
+                "endDate"
+            ],
+            "employeeLogManual":[
+                "Employee number",
+                "Employee name",
+                "CivilId",
+                "Log type",
+                "Log date",
+                "Log time"
+            ]    
+            
+            
+            
+            
+        }
+    }
+}

@@ -5,6 +5,7 @@ import { DeleteDialogComponent } from './components/data-table/components/Delete
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { PrimengModule } from '../primeng/primeng.module';
+import { ConfirmationService } from 'primeng/api';
 
 
 @NgModule({
@@ -20,8 +21,6 @@ import { PrimengModule } from '../primeng/primeng.module';
     FormsModule,
     ReactiveFormsModule,
     PrimengModule,
-    ReactiveFormsModule,
-    FormsModule,
     TranslateModule
   ],
   exports: [
@@ -30,6 +29,9 @@ import { PrimengModule } from '../primeng/primeng.module';
     ReactiveFormsModule,
     DataTableComponent,
     PrimengModule
+  ],
+  providers: [
+    ConfirmationService
   ]
 })
 export class SharedModule { }

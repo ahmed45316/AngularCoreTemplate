@@ -9,14 +9,18 @@ import { AuthService } from '../core/services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent  implements OnInit {
+export class LoginComponent implements OnInit {
   form: FormGroup;
   invalidLogin: boolean;
   Organizations_Data: any = false;
   logo: any;
+  model: any = {
+    userName: 'admin',
+    password: 'admin'
+  };
 
   constructor(
-   // private authenticationService: AuthService,
+    // private authenticationService: AuthService,
     private fb: FormBuilder,
     private router: Router,
     private activatedRoute: ActivatedRoute,

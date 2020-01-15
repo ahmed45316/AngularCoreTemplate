@@ -49,6 +49,7 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+// this makes calender very big
 .ui-table table th,td{
   overflow: hidden;
   width: 200px;

@@ -10,7 +10,7 @@ export class LayoutComponent implements OnInit {
 
   mobileMenuActive: boolean;
 
-  onMobileMenuButton (event) {
+  onMobileMenuButton(event) {
     this.mobileMenuActive = !this.mobileMenuActive;
     event.preventDefault();
   }

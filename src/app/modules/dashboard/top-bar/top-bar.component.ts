@@ -8,9 +8,20 @@ import { LayoutComponent } from '../layout/layout.component';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor(layout:LayoutComponent) { }
+  mobileMenuActive: boolean;
+  constructor(layout: LayoutComponent) { }
 
   ngOnInit() {
+  }
+
+  onMobileMenuButton(event) {
+    this.mobileMenuActive = !this.mobileMenuActive;
+    event.preventDefault();
+  }
+
+  hideMobileMenu(event) {
+    this.mobileMenuActive = false;
+    event.preventDefault();
   }
 
 }

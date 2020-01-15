@@ -1,0 +1,22 @@
+// .content{
+//     height: 100%;
+//     > div {
+//         width: 100%;
+//     }
+// }
+.example-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.Organization-logo{
+    text-align: center;
+    img{
+        width: 60px;
+        height: 80px;
+        margin: auto
+    }
+}
+// .example-container > * {
+//     width: 100%;
+// }

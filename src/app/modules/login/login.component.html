@@ -1,0 +1,48 @@
+<div class="bg-login" relative>
+  <!-- <div class="container h-100" *ngIf="Organizations_Data"> -->
+  <div class="container h-100">
+
+    <div class="row h-100 justify-content-center">
+      <div class="m-auto col-lg-6">
+        <div>
+          <span class="Organization-logo">
+            <img [src]="logo">
+            <span>
+              {{Organizations_Data?.organizationNameSl}}
+            </span>
+          </span>
+          <form [formGroup]="form" (ngSubmit)="authorize()">
+            <div class="example-container col-12">
+
+              <div  *ngIf="invalidLogin" class="danger">
+                Invalid User Name or Password
+              </div>
+
+              <div>
+                <input type="text" placeholder="User Name" formControlName="userName">
+              </div>
+
+              <div>
+                <input type="password"  placeholder="Password" formControlName="password">
+              </div>
+
+              <div class="d-flex justify-content-between">
+                <button type="submit" [disabled]="!form.valid">submit</button>
+                <button *ngIf="Organizations_Data?.secondaryLanguage">{{Organizations_Data?.secondaryLanguage}}</button>
+              </div>
+            </div>
+          </form>
+          <div class="text-right w-100">
+            <a  routerLink="/forget-password">Forgot password?</a>
+          </div>
+        </div>
+
+      </div>
+      <!-- <div class="text-center w-100 m-auto login-footer">
+        <span>Don’t have an account?</span>
+        <a  routerLink="/SignUp">Sign Up</a>
+      </div> -->
+    </div>
+  </div>
+  <!-- <app-loading *ngIf="!Organizations_Data"></app-loading> -->
+</div>

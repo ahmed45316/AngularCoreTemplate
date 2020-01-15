@@ -8,10 +8,11 @@ import { APP_BASE_HREF } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './modules/core/services/interceptors/tokenInterceptor';
 import { SharedModule } from './modules/shared/shared.module';
+import { LoginComponent } from './modules/login/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,LoginComponent
   ],
   imports: [
     BrowserModule,

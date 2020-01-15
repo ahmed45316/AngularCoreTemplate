@@ -10,6 +10,7 @@ import { ButtonModule } from 'primeng/button';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { CheckboxModule } from 'primeng/checkbox';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { AccordionModule } from 'primeng/accordion';
 @NgModule({
   declarations: [],
   imports: [
@@ -23,7 +24,8 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     ButtonModule,
     MultiSelectModule,
     CheckboxModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    AccordionModule
   ],
   exports: [
     TableModule,
@@ -36,7 +38,8 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     MultiSelectModule,
     CheckboxModule,
     CalendarModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    AccordionModule
   ]
 })
 export class PrimengModule { }

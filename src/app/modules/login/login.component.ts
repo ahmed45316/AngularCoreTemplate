@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 
 
     private sanitizer: DomSanitizer) {
-    //super();
+    // super();
     // let code = this.activatedRoute.snapshot.queryParamMap.get('code');
     // if (code == null || code == '') {
     //   this.router.navigate(['/404']);

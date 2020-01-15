@@ -96,7 +96,7 @@
         </div>
 
         <div *ngIf="col.filterMode && col.filterMode === 'date'">
-          <p-calendar appendTo="body" (onSelect)="columnSearchHandle($event.value, col.field)">
+          <p-calendar appendTo="body" dateFormat="yy-mm-dd" (onSelect)="columnSearchHandle($event.value, col.field)">
           </p-calendar>
 
           <!-- <mat-form-field style="width: 100%;">

@@ -11,6 +11,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { CheckboxModule } from 'primeng/checkbox';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { AccordionModule } from 'primeng/accordion';
+import { InputTextModule } from 'primeng/inputtext';
 @NgModule({
   declarations: [],
   imports: [
@@ -25,7 +26,8 @@ import { AccordionModule } from 'primeng/accordion';
     MultiSelectModule,
     CheckboxModule,
     AutoCompleteModule,
-    AccordionModule
+    AccordionModule,
+    InputTextModule
   ],
   exports: [
     TableModule,
@@ -39,7 +41,8 @@ import { AccordionModule } from 'primeng/accordion';
     CheckboxModule,
     CalendarModule,
     AutoCompleteModule,
-    AccordionModule
+    AccordionModule,
+    InputTextModule
   ]
 })
 export class PrimengModule { }

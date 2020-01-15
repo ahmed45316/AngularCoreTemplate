@@ -95,7 +95,7 @@ export class TestComponent extends BaseListComponent implements OnInit {
     });
   }
   add(model: any) {
-    super.add(model, AddTestComponent, 'lookup.country');
+    super.add(model, AddTestComponent, 'lookup.country', '40%');
   }
 
 }

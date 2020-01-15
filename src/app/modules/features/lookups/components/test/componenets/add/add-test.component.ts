@@ -15,24 +15,6 @@ export class AddTestComponent extends BaseEditComponent {
   model: Country = {};
   id: string;
   url = 'countries/GetAllPaged';
-  cities: any[] = [
-    {
-      cityId: 1,
-      name: 'Cairo'
-    },
-    {
-      cityId: 2,
-      name: 'Assiut'
-    },
-    {
-      cityId: 3,
-      name: 'Alex'
-    },
-    {
-      cityId: 4,
-      name: 'Minia'
-    }
-  ];
   get Service(): TestService { return Shell.Injector.get(TestService); }
   get Ref(): DynamicDialogRef { return this.ref; }
   get Config(): DynamicDialogConfig { return this.config; }

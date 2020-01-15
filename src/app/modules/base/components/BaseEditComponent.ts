@@ -30,7 +30,8 @@ export abstract class BaseEditComponent implements OnInit {
     console.log('--------ref', this.Ref);
     console.log('---------config', this.Config);
     console.log('----------form', form);
-    if (form == null || form == undefined) {
+    if (form == null || form === undefined) {
+      this.Ref.close();
       return false;
     }
     if (form === '') {

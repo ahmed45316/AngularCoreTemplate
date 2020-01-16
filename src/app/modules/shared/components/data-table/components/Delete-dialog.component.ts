@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/dynamicdialog/public_api';
+import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/api';
 
 @Component({
     selector: 'app-delete-dialog',
@@ -8,17 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteDialogComponent implements OnInit {
 
-    constructor() { }
+    constructor(public ref: DynamicDialogRef) { }
 
     ngOnInit(): void {
     }
-    // onNoClick(): void {
-    //     this.ref.close();
-    // }
+    onNoClick(): void {
+        this.ref.close( { data : false});
+    }
 
-    // onYesClick(): void {
-    //     this.ref.close({ data: this.config.data });
-    // }
+    onYesClick(): void {
+        this.ref.close({ data: true });
+    }
 }
 
 export interface DialogData {

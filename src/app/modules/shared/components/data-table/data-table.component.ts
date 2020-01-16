@@ -22,7 +22,7 @@ import { EventEmitter } from '@angular/core';
 import { DeleteDialogComponent } from './components/Delete-dialog.component';
 import { ExcelService } from './services/excel.service';
 import { fedra } from './font';
-import { ConfirmationService } from 'primeng/api';
+import { DialogService } from 'primeng/api';
 import { StorageService } from 'src/app/modules/core/services/storage/storage.service';
 import { LocalizationService } from 'src/app/modules/core/services/localization/localization.service';
 import { DropDownOptions } from './models/dropDownOptions.interface';
@@ -57,7 +57,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
 
   dropDownOptions: DropDownOptions[] = [
     {
-      id : null,
+      id: null,
       name: 'All'
     },
     {
@@ -77,7 +77,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
     public tableCore: TableCoreService,
     public storageService: StorageService,
     public localize: LocalizationService,
-    public confirmationService: ConfirmationService
+    public dialog: DialogService
   ) {
   }
 
@@ -212,29 +212,24 @@ export class DataTableComponent implements OnInit, OnDestroy {
   }
 
   openDeleteDialog(id): void {
-    this.confirmationService.confirm({
-      message: 'Are you sure that you want to Delete?',
-      header: 'Confirmation',
-      icon: 'pi pi-exclamation-triangle',
-      accept: () => {
-        this.delete(id);
-      },
-      reject: () => {
-        return false;
-      }
-
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      width: '250px',
+      data: { id }
     });
-    // const dialogRef = this.dialog.(DeleteDialogComponent, {
-    //   width: '250px',
-    //   data: { id }
-    // });
 
-    // dialogRef.afterClosed().subscribe((result) => {
-    //   if (result == null || result == undefined) {
-    //     return;
-    //   }
-    //   this.delete(id);
-    // });
+    dialogRef.onClose.subscribe((result) => {
+      if (result.data == null || result.data === undefined) {
+        return;
+      }
+      if (result.data === true) {
+
+        this.delete(id);
+      }
+      if (result.data === false) {
+
+        return;
+      }
+    });
   }
 
   // export server side

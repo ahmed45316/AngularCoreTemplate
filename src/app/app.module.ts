@@ -15,6 +15,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpModule } from '@angular/http';
 import { ConfigModule } from 'ngx-envconfig';
 import { environment } from 'src/environments/environment';
+import { ToastrModule } from 'ngx-toastr';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -31,6 +32,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AppRoutingModule,
     CoreModule,
     SharedModule,
+    ToastrModule.forRoot(),
     ConfigModule.forRoot(environment),
     TranslateModule.forRoot({
       loader: {

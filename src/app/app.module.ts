@@ -18,7 +18,7 @@ import { environment } from 'src/environments/environment';
 import { ToastrModule } from 'ngx-toastr';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
-  return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
+  return new TranslateHttpLoader(httpClient, './../assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -42,6 +42,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
     }),
   ],
+  exports: [TranslateModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

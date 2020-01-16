@@ -25,7 +25,6 @@ export class LocalizationService {
     this.lang = lang;
     this.translate.use(lang);
     localStorage.setItem('language', lang);
-    //this.service.CurrentLang(lang);
   }
 
 }

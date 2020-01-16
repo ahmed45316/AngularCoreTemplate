@@ -25,7 +25,7 @@ export class TestComponent extends BaseListComponent implements OnInit {
   }
 
   tableData = {
-    name: 'countries'
+    name: 'lookup.title'
   };
   public columns: ColumnsInterface[] = [
     {

@@ -14,19 +14,19 @@
   background: #fff !important;
 }
 
-.custom-paginator{
+.custom-paginator {
   background-color: #fff !important;
   position: relative !important;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23) !important;
   margin: 0 !important;
 }
-.tableClassRight{
+.tableClassRight {
   text-align: right;
 }
-.tableClassLeft{
+.tableClassLeft {
   text-align: left;
 }
-.iconPadding{
+.iconPadding {
   //margin: 0px 1px 2px 0px;
   padding-left: 5px;
   padding-right: 5px;
@@ -41,16 +41,25 @@
   animation: spin 2s linear infinite;
 }
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.ui-table table th,td{
+.ui-table table th,
+td {
   overflow: hidden;
   // this makes calender very big
   width: 200px;
@@ -58,7 +67,6 @@
   white-space: nowrap;
   padding: 0 10px;
 }
-
 
 .ui-table table {
   border-collapse: collapse;
@@ -68,5 +76,34 @@
   border: 1px solid rgb(201, 196, 196);
 }
 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles */
+  .ui-datepicker {
+    width: 90% !important;
+  }
+}
 
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */
+  .ui-datepicker {
+    width: 40% !important;
+  }
+}
 
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+  .ui-datepicker {
+    width: 25% !important;
+  }
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */
+  .ui-datepicker {
+    width: 90% !important;
+  }
+}

@@ -9,15 +9,17 @@ import { CoreModule } from '../../core/core.module';
 import { DialogService } from 'primeng/api';
 import { CountryComponent } from './countries/country/country.component';
 import { CountriesComponent } from './countries/countries.component';
+import { HolidayDateComponent } from './holidayDates/holidayDate/holidayDate.component';
+import { HolidayDatesComponent } from './holidayDates/holidayDates.component';
 
 
 @NgModule({
   entryComponents : [
-    AddTestComponent,CountryComponent
+    AddTestComponent,CountryComponent,HolidayDateComponent
   ],
   declarations: [
     AddTestComponent,
-    TestComponent,CountriesComponent,CountryComponent
+    TestComponent,CountriesComponent,CountryComponent,HolidayDatesComponent,HolidayDateComponent
   ],
   imports: [
     CommonModule,

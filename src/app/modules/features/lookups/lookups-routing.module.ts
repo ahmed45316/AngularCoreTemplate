@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TestComponent } from './components/test/test.component';
 import { CountriesComponent } from './countries/countries.component';
+import { HolidayDatesComponent } from './holidayDates/holidayDates.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,11 @@ const routes: Routes = [
   {
     path: 'country',
     component: CountriesComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'holidayDates',
+    component: HolidayDatesComponent,
     pathMatch: 'full'
   }
 ];

@@ -11,15 +11,15 @@
 <div class="layout-sidebar" [ngClass]="{'layout-sidebar-active':mobileMenuActive}">
   <ul class="layout-menu" (click)="hideMobileMenu($event)">
     <li>
-      <a [routerLink]="['/main/lookup']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <a [routerLink]="['/main/lookup/test']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
         <i class="fa fa-globe"></i>
-        <span>Sample</span>
+        <span>Test</span>
       </a>
     </li>
     <li>
-      <a [routerLink]="['/forms']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-        <i class="fa fa-check"></i>
-        <span>Forms</span>
+      <a [routerLink]="['/main/lookup/country']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="fa fa-globe"></i>
+        <span>Country</span>
       </a>
     </li>
     <li>

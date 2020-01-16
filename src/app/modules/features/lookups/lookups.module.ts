@@ -7,15 +7,17 @@ import { SharedModule } from '../../shared/shared.module';
 import { AddTestComponent } from './components/test/componenets/add/add-test.component';
 import { CoreModule } from '../../core/core.module';
 import { DialogService } from 'primeng/api';
+import { CountryComponent } from './countries/country/country.component';
+import { CountriesComponent } from './countries/countries.component';
 
 
 @NgModule({
   entryComponents : [
-    AddTestComponent
+    AddTestComponent,CountryComponent
   ],
   declarations: [
     AddTestComponent,
-    TestComponent
+    TestComponent,CountriesComponent,CountryComponent
   ],
   imports: [
     CommonModule,

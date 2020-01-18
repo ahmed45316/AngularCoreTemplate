@@ -35,7 +35,7 @@ export class HolidayDateComponent extends BaseEditComponent implements OnInit {
     }
     this.form = fb.group({
       id: [this.model.id],
-      holidayId: [this.model.holidayId],
+      holidayId: [this.model.holidayId, Validators.required],
       startDate: [this.model.startDate, Validators.required],
       endDate: [this.model.endDate, Validators.required],
       countryId: [this.model.countryId, Validators.required],
@@ -53,10 +53,6 @@ export class HolidayDateComponent extends BaseEditComponent implements OnInit {
         this.countries = data[0];
         this.holidays = data[1];
       });
-  }
-
-  select(value): void {
-    this.model.countryId = value;
   }
 
 }

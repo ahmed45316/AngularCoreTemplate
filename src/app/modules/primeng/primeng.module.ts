@@ -12,6 +12,8 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { AccordionModule } from 'primeng/accordion';
 import { InputTextModule } from 'primeng/inputtext';
+// additional third parties npm
+import { NgSelectModule } from '@ng-select/ng-select'
 @NgModule({
   declarations: [],
   imports: [
@@ -27,7 +29,8 @@ import { InputTextModule } from 'primeng/inputtext';
     CheckboxModule,
     AutoCompleteModule,
     AccordionModule,
-    InputTextModule
+    InputTextModule,
+    NgSelectModule
   ],
   exports: [
     TableModule,
@@ -42,7 +45,8 @@ import { InputTextModule } from 'primeng/inputtext';
     CalendarModule,
     AutoCompleteModule,
     AccordionModule,
-    InputTextModule
+    InputTextModule,
+    NgSelectModule
   ]
 })
 export class PrimengModule { }

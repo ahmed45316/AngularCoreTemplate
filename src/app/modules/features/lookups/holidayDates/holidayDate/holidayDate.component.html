@@ -26,11 +26,15 @@
   </div>
   <div class="ui-g-12 ui-md-6">
     <div>
-      <span class="ui-float-label">
-        <p-dropdown placeholder="Select a country" filter="true" [showClear]="true" [options]="countries"
-          formControlName="countryId" optionLabel="nameFl">
+      <ng-select [items]="countries" placeholder="Select Counrty" name="contury"
+                  bindLabel="nameFl" autofocus bindValue="id" formControlName="countryId">
+                </ng-select>
+      <!-- <span class="ui-float-label">
+        
+        <p-dropdown #dd (onChange)="select($event.value.id)" placeholder="Select a country" filter="true" [showClear]="true" [options]="countries"
+          formControlName="countryId" optionLabel="nameFl"  [dataKey]="id">
         </p-dropdown>
-      </span>
+      </span> -->
     </div>
   </div>
   <div class="ui-g-12 ui-md-12">

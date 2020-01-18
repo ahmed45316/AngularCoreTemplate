@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { HolidayDatesService } from '../Services/holidayDates';
 import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/api';
 import { BaseEditComponent } from 'src/app/modules/base/components/BaseEditComponent';
@@ -21,7 +21,6 @@ export class HolidayDateComponent extends BaseEditComponent implements OnInit {
   get Service(): HolidayDatesService { return Shell.Injector.get(HolidayDatesService); }
   get Ref(): DynamicDialogRef { return this.ref; }
   get Config(): DynamicDialogConfig { return this.config; }
-  form: FormGroup;
   countries: Country[];
   holidays: Holiday[];
 
@@ -36,7 +35,7 @@ export class HolidayDateComponent extends BaseEditComponent implements OnInit {
     }
     this.form = fb.group({
       id: [this.model.id],
-      holidayId: [this.model.holidayId, Validators.required],
+      holidayId: [this.model.holidayId],
       startDate: [this.model.startDate, Validators.required],
       endDate: [this.model.endDate, Validators.required],
       countryId: [this.model.countryId, Validators.required],
@@ -54,6 +53,10 @@ export class HolidayDateComponent extends BaseEditComponent implements OnInit {
         this.countries = data[0];
         this.holidays = data[1];
       });
+  }
+
+  select(value): void {
+    this.model.countryId = value;
   }
 
 }

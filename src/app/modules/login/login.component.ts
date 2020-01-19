@@ -78,7 +78,7 @@ export class LoginComponent implements OnInit {
   }
 
   authorize() {
-    this.router.navigate(['/main']);
+    this.router.navigate(['/main2']);
     // let val = this.form.value;
     // //let Organizations_data = JSON.parse(localStorage.getItem('Organizations_data'));
 

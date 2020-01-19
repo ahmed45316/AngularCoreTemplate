@@ -4,7 +4,7 @@
 
   <ng-template pTemplate="caption">
 
-    <div class="row p-2 mt-2">
+    <div class="ui-g ui-fluid">
 
       <div [className]="'tableNameDir' | translate">
         {{ tableData.name | translate}}
@@ -67,7 +67,7 @@
 
         <div *ngIf="col.filterMode && col.filterMode === 'dropdown'">
 
-          <p-multiSelect appendTo="body" #sel [options]="col.filterDropdown"
+          <p-multiSelect  appendTo="body" #sel [options]="col.filterDropdown"
             (onChange)="columnSearchHandle(sel.value, col.dropdownFilterName)" optionLabel="nameFl">
           </p-multiSelect>
 
@@ -78,7 +78,7 @@
         </div>
 
         <div *ngIf="col.filterMode && col.filterMode === 'check'">
-          <p-dropdown appendTo="body" [options]="dropDownOptions" #checkSel
+          <p-dropdown  appendTo="body" [options]="dropDownOptions" #checkSel
             (valueChange)="columnSearchHandle(checkSel.value, col.field)" optionLabel="name">
           </p-dropdown>
 
@@ -96,7 +96,7 @@
         </div>
 
         <div *ngIf="col.filterMode && col.filterMode === 'date'">
-          <p-calendar appendTo="body" dateFormat="yy-mm-dd" (onSelect)="columnSearchHandle($event.value, col.field)">
+          <p-calendar styleClass="datepickerCustom" appendTo="body" [dateFormat]="'dateformatprime' | translate" (onSelect)="columnSearchHandle($event.value, col.field)">
           </p-calendar>
 
           <!-- <mat-form-field style="width: 100%;">

@@ -22,5 +22,16 @@
 .dialog-content {
   padding: 10px;
 }
-
+.text-right {
+  display: flex;
+  justify-content: flex-end;
+}
+.text-left {
+  display: flex;
+  justify-content: flex-start;
+}
+.Savecontainer{
+  display: flex;
+  justify-content: space-evenly;
+}
 /* End General Controls Styles */

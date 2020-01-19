@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TestComponent } from './components/test/test.component';
-import { CountriesComponent } from './countries/countries.component';
-import { HolidayDatesComponent } from './holidayDates/holidayDates.component';
+import { CountriesComponent } from './components/countries/countries.component';
+import { HolidayDatesComponent } from './components/holidayDates/holidayDates.component';
 
 
 const routes: Routes = [

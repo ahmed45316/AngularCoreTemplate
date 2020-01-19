@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { TestService } from './services/test.service';
 import { ActivatedRoute } from '@angular/router';
-import { AddTestComponent } from './componenets/add/add-test.component';
 import { DialogService } from 'primeng/api';
 import { BaseListComponent } from 'src/app/modules/base/components/BaseListComponent';
 import { Shell } from 'src/app/modules/base/components/shell';
 import { ColumnsInterface } from 'src/app/modules/shared/components/data-table/models/columns.interface';
 import { ActionsInterface } from 'src/app/modules/shared/components/data-table/models/actions.interface';
+import { AddTestComponent } from './components/add/add-test.component';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',

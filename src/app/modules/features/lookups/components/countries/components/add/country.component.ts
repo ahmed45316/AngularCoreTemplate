@@ -1,10 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/api';
-import { CountriesService } from '../Services/countries.service';
 import { BaseEditComponent } from 'src/app/modules/base/components/BaseEditComponent';
-import { Country } from 'src/app/modules/core/services/models/country';
 import { Shell } from 'src/app/modules/base/components/shell';
+import { CountriesService } from '../../Services/countries.service';
+import { Country } from 'src/app/modules/core/services/models/country';
 
 @Component({
   selector: 'app-country',

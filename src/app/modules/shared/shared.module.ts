@@ -14,7 +14,7 @@ import { ConfirmationService } from 'primeng/api';
   ],
   declarations: [
     DataTableComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -28,7 +28,8 @@ import { ConfirmationService } from 'primeng/api';
     FormsModule,
     ReactiveFormsModule,
     DataTableComponent,
-    PrimengModule
+    PrimengModule,
+    TranslateModule
   ],
   providers: [
     ConfirmationService

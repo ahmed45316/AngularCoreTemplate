@@ -4,13 +4,13 @@ import { CommonModule } from '@angular/common';
 import { LookupsRoutingModule } from './lookups-routing.module';
 import { TestComponent } from './components/test/test.component';
 import { SharedModule } from '../../shared/shared.module';
-import { AddTestComponent } from './components/test/componenets/add/add-test.component';
 import { CoreModule } from '../../core/core.module';
 import { DialogService } from 'primeng/api';
-import { CountryComponent } from './countries/country/country.component';
-import { CountriesComponent } from './countries/countries.component';
-import { HolidayDateComponent } from './holidayDates/holidayDate/holidayDate.component';
-import { HolidayDatesComponent } from './holidayDates/holidayDates.component';
+import { AddTestComponent } from './components/test/components/add/add-test.component';
+import { CountryComponent } from './components/countries/components/add/country.component';
+import { HolidayDateComponent } from './components/holidayDates/components/add/holidayDate.component';
+import { CountriesComponent } from './components/countries/countries.component';
+import { HolidayDatesComponent } from './components/holidayDates/holidayDates.component';
 
 
 @NgModule({

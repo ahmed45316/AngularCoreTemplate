@@ -1,4 +1,3 @@
-import { HolidayDateComponent } from './holidayDate/holidayDate.component';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {  ActivatedRoute } from '@angular/router';
 import { HolidayDatesService } from './Services/holidayDates';
@@ -8,6 +7,7 @@ import { Shell } from 'src/app/modules/base/components/shell';
 import { ColumnsInterface } from 'src/app/modules/shared/components/data-table/models/columns.interface';
 import { ActionsInterface } from 'src/app/modules/shared/components/data-table/models/actions.interface';
 import { filterDropDownList } from 'src/app/modules/core/services/models/filterDropDownList';
+import { HolidayDateComponent } from './components/add/holidayDate.component';
 
 @Component({
   selector: 'app-holidayDates',

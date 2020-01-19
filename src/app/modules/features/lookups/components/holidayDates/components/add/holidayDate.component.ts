@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { HolidayDatesService } from '../Services/holidayDates';
 import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/api';
 import { BaseEditComponent } from 'src/app/modules/base/components/BaseEditComponent';
-import { HolidayDate } from 'src/app/modules/core/services/models/HolidayDate';
 import { Shell } from 'src/app/modules/base/components/shell';
-import { Country } from 'src/app/modules/core/services/models/country';
 import { Holiday } from 'src/app/modules/core/services/models/Holiday';
+import { HolidayDatesService } from '../../Services/holidayDates';
+import { HolidayDate } from 'src/app/modules/core/services/models/HolidayDate';
+import { Country } from 'src/app/modules/core/services/models/country';
 
 @Component({
   selector: 'app-holiday-date',
@@ -36,8 +36,8 @@ export class HolidayDateComponent extends BaseEditComponent implements OnInit {
     this.form = fb.group({
       id: [this.model.id],
       holidayId: [this.model.holidayId, Validators.required],
-      startDate: [this.model.startDate, Validators.required],
-      endDate: [this.model.endDate, Validators.required],
+      startDate: [this.isNew ? this.model.startDate : new Date(this.model.startDate), Validators.required],
+      endDate: [this.isNew ? this.model.endDate : new Date(this.model.endDate), Validators.required],
       countryId: [this.model.countryId, Validators.required],
       notes: [this.model.notes],
     });

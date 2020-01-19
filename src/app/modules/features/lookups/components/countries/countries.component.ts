@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CountriesService } from './Services/countries.service';
-import { CountryComponent } from './country/country.component';
 import { DialogService } from 'primeng/api';
 import { BaseListComponent } from 'src/app/modules/base/components/BaseListComponent';
 import { Shell } from 'src/app/modules/base/components/shell';
 import { ColumnsInterface } from 'src/app/modules/shared/components/data-table/models/columns.interface';
 import { ActionsInterface } from 'src/app/modules/shared/components/data-table/models/actions.interface';
+import { CountryComponent } from './components/add/country.component';
 
 @Component({
   selector: 'app-countries',

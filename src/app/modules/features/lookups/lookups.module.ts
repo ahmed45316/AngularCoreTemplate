@@ -14,12 +14,12 @@ import { HolidayDatesComponent } from './components/holidayDates/holidayDates.co
 
 
 @NgModule({
-  entryComponents : [
-    AddTestComponent,CountryComponent,HolidayDateComponent
+  entryComponents: [
+    AddTestComponent, CountryComponent, HolidayDateComponent
   ],
   declarations: [
     AddTestComponent,
-    TestComponent,CountriesComponent,CountryComponent,HolidayDatesComponent,HolidayDateComponent
+    TestComponent, CountriesComponent, CountryComponent, HolidayDatesComponent, HolidayDateComponent
   ],
   imports: [
     CommonModule,

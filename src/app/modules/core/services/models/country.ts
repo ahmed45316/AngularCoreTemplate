@@ -4,4 +4,5 @@ export class Country {
     code?: string;
     nameFl?: string;
     nameSl?: string;
+    createdDate?: string;
 }

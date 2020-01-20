@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Inject, Optional } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/api';
 import { TestService } from '../../services/test.service';
 import { BaseEditComponent } from 'src/app/modules/base/components/BaseEditComponent';
 import { Shell } from 'src/app/modules/base/components/shell';
 import { Country } from 'src/app/modules/core/services/models/country';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-test-dialog',
@@ -16,16 +17,14 @@ export class AddTestComponent extends BaseEditComponent {
   id: string;
   url = 'countries/GetAllPaged';
   get Service(): TestService { return Shell.Injector.get(TestService); }
-  get Ref(): DynamicDialogRef { return this.ref; }
-  get Config(): DynamicDialogConfig { return this.config; }
   constructor(
     public fb: FormBuilder,
-    public ref: DynamicDialogRef,
-    public config: DynamicDialogConfig
+    public dialogRef: MatDialogRef<AddTestComponent>,
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    super();
-    if (this.config.data) {
-      this.model = this.config.data;
+    super(dialogRef);
+    if (this.data) {
+      this.model = this.data;
       this.isNew = false;
     }
     this.form = fb.group({
@@ -33,7 +32,7 @@ export class AddTestComponent extends BaseEditComponent {
       code: [this.model.code],
       nameFl: [this.model.nameFl, Validators.required],
       nameSl: [this.model.nameSl, Validators.required],
-      cityId: ['']
+      createdDate: [this.model.createdDate]
     });
   }
 

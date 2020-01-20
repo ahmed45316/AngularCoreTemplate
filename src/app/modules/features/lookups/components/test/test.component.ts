@@ -7,6 +7,7 @@ import { Shell } from 'src/app/modules/base/components/shell';
 import { ColumnsInterface } from 'src/app/modules/shared/components/data-table/models/columns.interface';
 import { ActionsInterface } from 'src/app/modules/shared/components/data-table/models/actions.interface';
 import { AddTestComponent } from './components/add/add-test.component';
+import { MatDialog } from '@angular/material';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -19,9 +20,8 @@ export class TestComponent extends BaseListComponent implements OnInit {
     delete: 'countries/delete'
   };
   get Service(): TestService { return Shell.Injector.get(TestService); }
-  get Dialog(): DialogService { return this.dialogService; }
-  constructor(public route: ActivatedRoute, public dialogService: DialogService) {
-    super();
+  constructor(public route: ActivatedRoute, public dialogService: DialogService, public dialog: MatDialog) {
+    super(dialog);
   }
 
   tableData = {
@@ -94,8 +94,8 @@ export class TestComponent extends BaseListComponent implements OnInit {
       this.columns[3].filterDropdown = data;
     });
   }
-  add(model: any) {
-    super.add(model, AddTestComponent, 'lookup.country', '40%');
+  addEvent(model: any) {
+    super.add(AddTestComponent, model, '500px');
   }
 
 }

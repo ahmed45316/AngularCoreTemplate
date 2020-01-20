@@ -6,42 +6,41 @@ import { TableCoreService } from '../../shared/components/data-table/services/ta
 import { Shell } from './shell';
 import { HttpService } from '../../core/services/http/http.service';
 import { AlertService } from '../../core/services/alert/alert.service';
-import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/api';
+import { MatDialogRef } from '@angular/material';
 
 export abstract class BaseEditComponent implements OnInit {
 
   isNew = true;
+  url;
   form: FormGroup;
-  url: string;
   abstract get Service(): HttpService;
-  abstract get Ref(): DynamicDialogRef;
-  abstract get Config(): DynamicDialogConfig;
   get localize(): LocalizationService { return Shell.Injector.get(LocalizationService); }
   get Alert(): AlertService { return Shell.Injector.get(AlertService); }
   get Route(): Router { return Shell.Injector.get(Router); }
   get TableCore(): TableCoreService { return Shell.Injector.get(TableCoreService); }
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<any>) { }
 
 
   ngOnInit(): void {
-    console.log(this.url);
   }
   close(form) {
-    console.log('--------ref', this.Ref);
-    console.log('---------config', this.Config);
-    console.log('----------form', form);
-    if (form == null || form === undefined) {
-      this.Ref.close();
-      return false;
-    }
-    if (form === '') {
-      return false;
-    }
-    if (this.isNew) {
-      this.submitNew(form);
-    } else {
-      this.submitUpdate(form);
-    }
+    this.dialogRef.close(form);
+    this.dialogRef.afterClosed().subscribe((data: any) => {
+      console.log('----data from closing', data);
+      console.log('----------form', form);
+      if (form == null || form === undefined) {
+        return false;
+      }
+      if (form === '') {
+        return false;
+      }
+      if (this.isNew) {
+        this.submitNew(form);
+      } else {
+        this.submitUpdate(form);
+      }
+    });
+
   }
 
   submitNew(model: any): void {
@@ -52,7 +51,6 @@ export abstract class BaseEditComponent implements OnInit {
       }
       --this.TableCore.pageOptions.offset;
       this.TableCore.reRenderTable(this.url);
-      this.Ref.close();
 
     }, error => {
       // this.Alert.openAlert('Error Adding'); translate it please
@@ -67,7 +65,6 @@ export abstract class BaseEditComponent implements OnInit {
       }
       --this.TableCore.pageOptions.offset;
       this.TableCore.reRenderTable(this.url);
-      this.Ref.close();
       // this.Alert.openAlert('Updated Successfully');   translate it please
 
     }, error => {
